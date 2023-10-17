@@ -1,0 +1,352 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+#header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  width: 1300px;
+  margin: auto;
+  display: flex;
+  z-index: 101;
+}
+#header div {
+  text-align: center;
+}
+#header .navbar-left {
+  margin-right: 40px;
+}
+#header .navbar-left ul {
+  display: flex;
+  list-style: none;
+  padding-left: 22px;
+}
+#header .navbar-left ul li {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-left: 30px;
+  height: 96px;
+}
+#header .navbar-left ul li .submenu {
+  transition: 0.5s;
+  display: flex;
+  position: absolute;
+  top: 100%;
+  width: 200px;
+  text-align: left;
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  background-color: #000;
+  z-index: 1;
+}
+#header .navbar-left ul li .submenu i {
+  display: none;
+  transition: 0.5s;
+  padding-right: 5px;
+}
+#header .navbar-left ul li .submenu a {
+  color: #a5a5a5;
+  transition: 0.5s;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+#header .navbar-left ul li .submenu a:hover i {
+  color: #fff !important;
+  display: inline-block;
+  transition: 0.5s;
+}
+#header .navbar-left ul li .submenu li {
+  height: 30px;
+}
+#header .navbar-left ul li ul {
+  padding: 10px !important;
+  display: block;
+}
+#header .navbar-left ul li:hover .submenu {
+  height: auto;
+  opacity: 1;
+  transition: 0.5s;
+}
+#header .navbar-left ul a {
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: Catamaran, sans-serif;
+  padding-left: -20px;
+  transition: 0.5s;
+}
+#header .navbar-left ul a:hover {
+  color: #929292;
+  transition: 0.5s;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo a:hover {
+  cursor: pointer;
+}
+.logo a img {
+  padding: 10px;
+  max-width: 50%;
+  filter: invert(1);
+}
+
+.menu-bar-left {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  color: black;
+  font-size: 12px;
+}
+.menu-bar-left i {
+  font-size: 12px;
+  margin-right: 5px;
+  padding-left: 15px;
+}
+.menu-bar-left span {
+  margin-right: 10px;
+}
+.menu-bar-left .cart {
+  margin-right: 10px;
+}
+
+.dropdown-cart {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content-cart {
+  display: none;
+  position: absolute;
+  top: calc(100% + 27px);
+  right: 0;
+  width: 180px;
+  background-color: black;
+  min-width: 200px;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+}
+
+.dropdown-cart:hover .dropdown-content-cart {
+  display: block;
+}
+
+.trigger.cart {
+  cursor: pointer;
+}
+
+.dropdown-bars {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-bars .dropdown-content-bars {
+  display: block;
+  position: absolute;
+  top: calc(100% + 27px);
+  right: -102px;
+  background-color: black;
+  width: 460px;
+  height: 490px;
+  z-index: 1;
+  text-align: center;
+  padding: 10px 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  opacity: 0;
+}
+.dropdown-bars .dropdown-content-bars i {
+  font-size: 18px;
+  color: white;
+}
+.dropdown-bars .dropdown-content-bars p {
+  color: white;
+  font-size: 18px;
+}
+.dropdown-bars.active .dropdown-content-bars {
+  transform: translateX(0);
+  opacity: 1;
+}
+.dropdown-bars .close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.dropdown-search {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-search .trigger {
+  cursor: pointer;
+}
+
+.dropdown-search input[type=checkbox] {
+  display: none;
+}
+
+.dropdown-content-search {
+  display: none;
+  position: absolute;
+  top: calc(100% + 27px);
+  right: 0;
+  width: 180px;
+  background-color: black;
+  min-width: 200px;
+  z-index: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.dropdown-content-search input {
+  width: 80%;
+  padding: 5px;
+  border: none;
+  margin-right: 10px;
+  background-color: black;
+  color: white;
+}
+.dropdown-content-search button {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dropdown-search input[type=checkbox]:checked ~ .dropdown-content-search {
+  display: block;
+}
+
+body {
+  background: #FAFAFA;
+  font-family: "Catamaran", sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+body .card {
+  width: 900px;
+  height: 400px;
+  position: absolute;
+  background: white;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+}
+body .card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+body .card .photo {
+  padding: 30px;
+  width: 45%;
+  text-align: center;
+  float: left;
+}
+body .card .photo img {
+  max-height: 240px;
+}
+body .card .small-photos {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+body .card .small-photo {
+  margin-right: 10px; /* Добавьте отступ между маленькими изображениями по вашему желанию */
+}
+body .card .small-photo img {
+  max-width: 80px; /* Уменьшите максимальную ширину маленьких изображений */
+  max-height: 80px; /* Уменьшите максимальную высоту маленьких изображений */
+}
+body .card .description {
+  padding: 30px;
+  float: left;
+  width: 55%;
+  border-left: 2px solid #efefef;
+}
+body .card .description h1 {
+  color: #515151;
+  font-weight: 300;
+  padding-top: 15px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 300;
+}
+body .card .description h2 {
+  color: #515151;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+}
+body .card .description h4 {
+  margin: 0;
+  color: #727272;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+}
+body .card .description h3 {
+  margin: 0;
+  color: #727272;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 8px;
+  padding-bottom: 40px;
+}
+body .card .description p {
+  font-size: 10px;
+  line-height: 20px;
+  color: #727272;
+  padding: 20px 0;
+  margin: 0;
+}
+body .card .description p span {
+  display: inline; /* Это позволяет элементам <span> отображаться в одной строке */
+  margin-right: 10px; /* Добавляет небольшой отступ между элементами <span> */
+}
+body .card .description button {
+  outline: 0;
+  border: 0;
+  background: black;
+  border: 1px solid #d9d9d9;
+  padding: 8px 0px;
+  margin-bottom: 30px;
+  color: #515151;
+  text-transform: uppercase;
+  width: 125px;
+  font-family: inherit;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+body .card .description button:hover {
+  border: 1px solid #aedaa6;
+  color: #aedaa6;
+  cursor: pointer;
+}/*# sourceMappingURL=style-product.css.map */

@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: 'Catamaran',sans-serif;
+    margin-top: 70px; 
+}
+//левый горизонт header#header {
+#header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 1300px;
+    margin: auto;
+    display: flex; 
+    z-index: 101;
+    div {
+        text-align: center;
+    }
+    .navbar-left {
+        ul {
+            display: flex;
+            list-style: none;
+            li {
+                display: flex;
+                position: relative;
+                align-items: center;
+                padding-left: 30px;
+                height: 96px;
+                .submenu {
+                    i {
+                        display: none;
+                        transition: 0.5s;
+                        padding-right: 5px;
+                    }
+                    a {
+                        color: #a5a5a5;
+                        transition: 0.5s;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 24px;
+                    }
+                    a:hover i {
+                        color: #fff !important;
+                        display: inline-block;
+                        transition: 0.5s;
+
+                    }
+
+                    li {
+                        height: 30px;
+                    }
+
+                    transition: 0.5s;
+                    display: flex;
+                    position: absolute;
+                    top: 100%;
+                    width: 200px;
+                    text-align: left;
+                    opacity: 0;
+                    height: 0px;
+                    overflow: hidden;
+                    background-color: #000;
+                    z-index: 1;
+                }
+
+                ul {
+                    padding: 10px !important;
+                    display: block;
+                }
+
+
+
+            }
+
+            li:hover .submenu {
+                height: auto;
+                opacity: 1;
+                transition: 0.5s;
+
+            }
+
+            padding-left: 22px;
+
+            a {
+                color: #000;
+                font-size: 12px;
+                font-weight: 500;
+                text-decoration: none;
+                font-family: Catamaran, sans-serif;
+                padding-left: -20px;
+                transition: 0.5s;
+            }
+
+            a:hover {
+                color: #929292;
+                transition: 0.5s;
+            }
+        }
+
+
+
+    }
+
+}
+//середина это где лого
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            cursor: pointer; 
+        }
+        img {
+            padding: 10px;
+            max-width: 50%;
+            filter: invert(1);
+        }
+    }
+}
+//правый горизонт header
+.menu-bar-left {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    color: black;
+    font-size: 12px;
+    
+    i {
+        font-size: 12px; 
+        margin-right:5px;
+        padding-left: 15px;
+    }
+    span {
+        margin-right: 10px;
+      
+    }
+    .cart {
+        margin-right: 10px; 
+        
+    }
+}
+//выпадающие окна cart
+.dropdown-cart {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content-cart {
+    display: none;
+    position: absolute;
+    top: calc(100% + 27px); 
+    right: 0;
+    width: 180px;
+    background-color: black;
+    min-width: 200px; 
+    z-index: 1;
+    color: white;
+    padding: 20px;
+}
+
+.dropdown-cart:hover .dropdown-content-cart {
+    display: block;
+}
+
+.trigger.cart {
+    cursor: pointer;
+}
+
+//выпадающее окно меню бар
+.dropdown-bars {
+    position: relative;
+    display: inline-block;
+
+    .dropdown-content-bars {
+        display: block; 
+        position: absolute;
+        top: calc(100% + 27px);  
+        right: -102px; 
+        background-color: black;
+        width: 460px; 
+        height: 490px;
+        z-index: 1;
+        text-align: center;
+        padding: 10px 0;
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-out; // плавный переход
+        opacity: 0; // чтобы скрыть содержимое меню
+         i {
+            font-size: 18px;
+            color: white;
+         }
+         p {
+            color: white;
+            font-size: 18px;
+         }
+    }
+
+    &.active .dropdown-content-bars {
+        transform: translateX(0); // окончательное положение меню
+        opacity: 1;
+    }
+    .close-icon {
+        position: absolute;
+        top: 10px; 
+        right: 10px; 
+        cursor: pointer; 
+    }
+    
+}
+//выпадающее окно search
+.dropdown-search {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-search .trigger {
+    cursor: pointer;
+}
+
+.dropdown-search input[type="checkbox"] {
+    display: none;
+}
+
+.dropdown-content-search {
+    display: none;
+    position: absolute;
+    top: calc(100% + 27px); 
+    right: 0;
+    width: 180px;
+    background-color: black;
+    min-width: 200px;
+    z-index: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    
+    input {
+        width: 80%;
+        padding: 5px;
+        border: none;
+        margin-right: 10px;
+        background-color: black;
+        color: white;
+    }
+
+    button {
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+.dropdown-search input[type="checkbox"]:checked ~ .dropdown-content-search {
+    display: block;
+}
+//sliders
+
+.slider {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #F3F3F3; 
+}
+
+.nav {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav-item {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.nav-number {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.nav-line {
+    width: 100px;
+    height: 2px;
+    background-color: black;
+    transition: width 0.5s;
+}
+.slides {
+    flex: 1;
+    position: relative;
+    margin-right: 40px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: #F3F3F3; 
+    .slide-text {
+        position: absolute;
+        bottom: 20px;  
+        left: -245px;  
+        h6 {
+            color: black;
+            font-family: 'Catamaran',sans-serif;
+            font-weight: bold;
+            font-size: 34px;
+            text-decoration: none;  
+            text-transform: uppercase; 
+        }
+    }
+    
+}
+
+.slide img {
+    max-width: 80%; /* Задает максимальную ширину изображения в процентах */
+    max-height: 80%; /* Задает максимальную высоту изображения в процентах */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto; /* Это выровняет изображение по центру */
+    background-color: #F3F3F3;
+}
+
+//product
+.products-area {
+    width: 100%;
+    background: white; 
+    padding: 40px 0; 
+
+    .products-filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 40px;
+
+        .category {
+            a {
+                text-decoration: none; 
+                margin: 0 10px; 
+                font-family: 'Catamaran',sans-serif;
+                font-size: 12px;
+                color: black; 
+                text-transform: uppercase; 
+                
+                &:hover {
+                    text-decoration: underline; 
+                }
+
+                &:first-child {
+                    color: blue; 
+                }
+            }
+        }
+
+        .filter {
+            color: black;
+            text-transform: uppercase; 
+            font-size: 11px;
+            font-family: 'Catamaran',sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding-right: 40px;
+
+            i {
+                margin-left: 5px; // Some space between text and icon
+            }
+        }
+    }
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 55px;
+  }
+  .product-list {
+    position: relative;
+    box-sizing: border-box;
+    border: none;
+    padding: 0 15px 50px;
+    flex-basis: calc(25% - 10px);
+    margin-right: 10px;
+    margin-bottom: 20px;
+    img {
+    max-width: 100%;
+  }
+}
+  .product-name {
+    font-family: "Catamaran";
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    color: #080808;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-top: 22px;
+  }
+  .sale {
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: auto;
+    right: 215px;
+    width: auto;
+    color: #080808;
+    font-size: 13px;
+    font-family: "Montserrat";
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+    z-index: 100;
+  }
+  .prod-new {
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: auto;
+    right: 48px;
+    width: auto;
+    color: #080808;
+    font-size: 13px;
+    font-family: "Montserrat";
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+    z-index: 100;
+  }
+  .price {
+    font-family: "Montserrat";
+    font-weight: 100;
+    text-align: center;
+    color: #999;
+    border: none;
+    margin-top: 7px; 
+  }
+  .discount {
+    text-decoration: line-through;
+  } 
+ .addtocart {
+    font-family: "Catamaran";
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-top: 22px;
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+ }
+
+//footer
+footer {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        .footer-section {
+            flex: 1;
+            padding: 0 20px;
+
+            h4 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                li {
+                    margin-bottom: 5px;
+                    a {
+                        position: relative; 
+                        text-decoration: none;
+                        color: #333;
+                        padding-left: 20px; 
+                        transition: padding-left 0.3s;
+                        &:hover {
+                            padding-left: 25px; 
+                            i.fa-solid {
+                                opacity: 1;
+                                transform: translateX(0); 
+                            }
+                        }
+
+                        i.fa-solid {
+                            position: absolute; 
+                            left: 0;
+                            top: 25%;
+                            transform: translateX(-50%) translateY(-3%); 
+                            opacity: 0;
+                            transition: opacity 0.3s, transform 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
