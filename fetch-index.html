@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-    <link rel="stylesheet" href="/src/css/style-product.css">
+    <title>Fetch product</title>
+    <link rel="stylesheet" href="/src/css/fetch-styles.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/slider.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Croissant+One&family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Croissant+One&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <section id="header">
-        <div class="logo">
-            <a href="https://depot.qodeinteractive.com/">
-                <img src="/src/image/logo_white.png" alt="Логотип">
-
-            </a>
-        </div>
         <div class="navbar-left">
             <ul>
                 <li>
@@ -105,7 +105,12 @@
                 </li>
             </ul>
         </div>
-        
+        <div class="logo">
+            <a href="https://depot.qodeinteractive.com/">
+                <img src="/src/image/logo_white.png" alt="Логотип">
+
+            </a>
+        </div>
         
         <div class="menu-bar-left">
 <!--выпадающее окно cart-->
@@ -139,39 +144,102 @@
             
         </div>
     </section>
-    <div class="card">
-            <div class="small-photos">
-                <div class="small-photo">
-                    <img src="/src/image/product/h1-product-8-505x505.jpg">
-                </div>
-                <div class="small-photo">
-                    <img src="/src/image/product/h1-product-8-505x505.jpg">
-                </div>
-                <div class="small-photo">
-                    <img src="/src/image/product/h1-product-8-505x505.jpg">
-                </div>
-                <div class="small-photo">
-                    <img src="/src/image/product/h1-product-8-505x505.jpg">
-                </div>
-            </div>
-            <div class="photo">
-                <img src="/src/image/product/h1-product-8-505x505.jpg">
-            </div>
-        
-        <div class="description">
-          <h2>BASKET WITH HANDLES</h2>
-          <h1>$60</h1>
-          <p>
-            <span style="color: yellow; font-size: 18px;">★ ★ ★ ★ ☆</span>
-            <span>(1 CUSTOMER REVIEW)</span>
-        </p>
-          
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</h3>
-          <button style="background-color: white;">Wishlist</button>
-          <button>Add to Cart</button>
-          
+
+<!--slider-->
+<div class="slider" style="margin-left: 60px;">
+    <div class="nav">
+        <div class="nav-item" data-index="0">
+            <div class="nav-number">01</div>
+            <div class="nav-line"></div>
         </div>
-      </div>
-      <script src="/src/js/app-product.js"></script>
+        <div class="nav-item" data-index="1">
+            <div class="nav-number">02</div>
+            <div class="nav-line"></div>
+        </div>
+        <div class="nav-item" data-index="2">
+            <div class="nav-number">03</div>
+            <div class="nav-line"></div>
+        </div>
+    </div>
+    <div class="slides">
+        <div class="slide" id="slide1" style="display: block;">
+            <div class="slide-text"><h6>THINK DIFFIRENT.</h6></div>
+            <img src="/src/image/sliders/stul black.png" alt="Изображение 1">
+        </div>
+        <div class="slide" id="slide2">
+            <div class="slide-text"><h6>PREMIUM COMFORT.</h6></div>
+            <img src="/src/image/sliders/h1-slide2-img2.png" alt="Изображение 2">
+        </div>
+        <div class="slide" id="slide3">
+            <div class="slide-text"><h6>CONTEMPORARY DESIGN.</h6></div>
+            <img src="/src/image/sliders/h1-slide3-img.jpg" alt="Изображение 3">
+        </div>
+    </div>
+</div>
+
+<!--product-->
+<div class="products-area">
+        <div class="products-filter">
+            <div class="category">
+                <a href="#" data-category="ALL">ALL</a>
+                <a href="#" data-category="Home Decor">Home decor</a>
+                <a href="#" data-category="Lighting">Lighting</a>
+                <a href="#" data-category="Decoration">Decoration</a>
+                <a href="#" data-category="Vases">Vases</a>
+                <a href="#" data-category="Basics">Basics</a>
+            </div>
+            <div class="filter">Filter <i class="fa-solid fa-sort-down"></i></div>
+        </div>
+</div>
+        <div class="products"> </div>
+     
+<!--footer-->     
+<footer>
+            <div class="footer-container">
+              <div class="footer-section">
+                <h4>CUSTOMER SERVICE</h4>
+                <ul>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Help & Contact Us</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Returns & Refunds</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Online Stores</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Terms & Conditions</a></li>
+                </ul>
+              </div>
+          
+              <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>What We Do</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Available Services</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Latest Posts</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>FAQs</a></li>
+                </ul>
+              </div>
+          
+              <div class="footer-section">
+                <h4>SOCIAL MEDIA</h4>
+                <ul>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Twitter</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Instagram</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Tumblr</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Pinterest</a></li>
+                </ul>
+              </div>
+          
+              <div class="footer-section">
+                <h4>PROFILE</h4>
+                <ul>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>My Account</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Checkout</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Order Tracking</a></li>
+                  <li><a href="#"><i class="fa-solid fa-arrow-right" style="color: #929292;"></i>Help & Support</a></li>
+                </ul>
+              </div>
+            </div>
+</footer>         
+
+	<script src="/src/js/fetch-script.js"></script> 
+    <script src="/src/js/drop-down.js"></script>
+    <script src="/src/js/slider.js"></script>
 </body>
 </html>

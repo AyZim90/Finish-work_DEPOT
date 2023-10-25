@@ -1,0 +1,52 @@
+[{
+	"id": 0,
+	"imgs": "products/01.jpg",
+	"title": "Basket With Handles",
+	"price": 160,
+	"categorys": ["Decoration", "Home Decor"]
+
+},
+{
+	"id": 1,
+	"imgs": "products/03.jpg",
+	"title": "Deco Accessory",
+	"price": 15,
+	"categorys": ["Basics", "Home Decor"]
+}, {
+	"id": 2,
+	"imgs": "products/02.jpg",
+	"title": "Flower Vase",
+	"price": 170,
+	"categorys": ["Home Decor", "Vases"]
+}, {
+	"id": 3,
+	"imgs": "products/04.jpg",
+	"title": "Wall Clock",
+	"price": 110,
+	"categorys": ["Basics", "Home Decor"]
+}, {
+	"id": 4,
+	"imgs": "products/05.jpg",
+	"title": "Newspaper Storage",
+	"price": 90,
+	"categorys": [" Basics", "Home Decor"]
+}, {
+	"id": 5,
+	"imgs": "products/06.jpg",
+	"title": "Pottery Vase",
+	"price": 60,
+	"categorys": ["Home Decor", "Vases"]
+}, {
+	"id": 6,
+	"imgs": "products/08.jpg",
+	"title": "Rose Holdback",
+	"price": 30,
+	"categorys": ["Decoration", "Home Decor"]
+}, {
+	"id": 7,
+	"imgs": "products/07.jpg",
+	"title": "Lamp",
+	"price": 160,
+	"categorys": ["Decoration", "Home Decor" , "Lighting"]
+}
+]
